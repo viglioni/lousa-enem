@@ -1,0 +1,58 @@
+{
+  "name": "lousa-enem",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=dev next dev",
+    "build:server": "rm -rf  dist && tsc --project tsconfig.server.json",
+    "build:next": "rm -rf  .next && NODE_ENV=production next build",
+    "build": "npm run build:next && npm run build:server",
+    "export": "npm run build && next export",
+    "export:only": "next export",
+    "start": "NODE_ENV=production node dist/server/main.js",
+    "start:exported": "serve ./out",
+    "test": "jest",
+    "test:dev": "jest --watch",
+    "typecheck": "tsc -p tsconfig.json",
+    "hostinger:deploy": "npm run export && sh ./scripts/hostinger-deploy.sh"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/lab": "^5.0.0-alpha.135",
+    "@mui/material": "^5.10.10",
+    "@mui/x-date-pickers": "^6.9.1",
+    "dayjs": "^1.11.9",
+    "material-table": "^2.0.3",
+    "next": "^12.3.1",
+    "ramda": "^0.27.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.3",
+    "@types/ramda": "^0.27.32",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-immutable": "^1.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.5.1",
+    "next-transpile-modules": "^9.1.0",
+    "prettier": "~2.0.5",
+    "serve": "^11.3.2",
+    "ts-node": "~8.10.1",
+    "typescript": "^5.1.6"
+  },
+  "lint-staged": {
+    "*": [
+      "eslint --fix --quiet",
+      "prettier --write --loglevel error"
+    ]
+  }
+}

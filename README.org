@@ -1,0 +1,14 @@
+* Lousa ENEM
+
+App para ajudar vestibulandos fazendo simulados ENEM.
+
+O App mostra a lousa com as informações da passagem de tempo durante a prova do ENEM.
+
+Acesse em [[http://enem.viglioni.com][enem.viglioni.com]]
+
+** Rodar localmente
+
+#+begin_src shell :exports both :results output 
+  npm run dev
+#+end_src
+
