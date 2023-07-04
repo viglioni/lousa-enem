@@ -75,7 +75,9 @@ const Home = (): JSX.Element => {
         justifyContent={'space-evenly'}
       >
         <TestStartContainer direction="column">
-          <InputLabel id="duration">Selecione a duração da prova</InputLabel>
+          <InputLabel id="duration">
+            Insira o horário de início da prova
+          </InputLabel>
           <TimePicker
             ampm={false}
             value={value}
