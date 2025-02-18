@@ -20,7 +20,7 @@ interface ScheduleTableProps {
   items: ScheduleItem[]
 }
 
-const ScheduleTable = ({ items }: ScheduleTableProps) => {
+export const ScheduleTable = ({ items }: ScheduleTableProps) => {
   const [currentTimeSlot, setCurrentTimeSlot] = useState<string | null>(null)
 
   useEffect(() => {
@@ -71,5 +71,3 @@ const ScheduleTable = ({ items }: ScheduleTableProps) => {
     </Box>
   )
 }
-
-export default ScheduleTable

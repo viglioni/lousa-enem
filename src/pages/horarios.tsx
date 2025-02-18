@@ -3,8 +3,9 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
-import ScheduleTable from '../components/schedule_table'
+import { ScheduleTable } from '../components/schedule_table'
 import { schedules } from '../data/schedules'
+import { GifBox } from '../components/gif'
 
 const periods = [
   {
@@ -123,7 +124,11 @@ const StudySchedules = () => {
         </AppBar>
       </Box>
       <Container sx={{ mt: 4 }}>
-        <ScheduleTable items={tableData} />
+        {tableData.length ? (
+          <ScheduleTable items={tableData} />
+        ) : (
+          <GifBox src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTc3aHk0YXprd24waWhmbHJ6NnRnb2VsMzZiaGlmaWhuN2VhcHU1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rfQIda9Iiz3mhYf6XZ/giphy.gif" />
+        )}
       </Container>
     </Container>
   )
