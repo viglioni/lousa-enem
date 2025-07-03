@@ -1,4 +1,4 @@
-import { VideoCall, Videocam } from '@mui/icons-material'
+import { Videocam } from '@mui/icons-material'
 import {
   Button,
   Container,
